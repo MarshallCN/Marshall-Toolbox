@@ -11,6 +11,6 @@
 	<?php
 		if(isset($_POST['trs'])){
 			$trsweb=$baidutrs.$_POST['trstext'];
-			echo "<script language=\"javascript\">window.open ('$trsweb', 'Translating', 'height=800, width=1200, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=yes,location=yes, status=yes')</script>";
+			echo "<script language=\"javascript\">window.open ('$trsweb', 'Translating', 'height=800, width=1200, top=0, left=0')</script>";
 		}
 	?>
