@@ -13,6 +13,7 @@
 			<column cols="4"><label>Year</label>
 				<input type="text" name='year' size=10 maxlength=4></column></row>
 			<button name='make' type="submit" class='right'>Make Bibliography</button>
+			<button name='add' type="submit" class='right'>Add a Bibliography</button>
 		</fieldset>
 		<input type="hidden" name='cur' value="123">
 	</form>
@@ -63,8 +64,12 @@
 			$bibinfo[2]='(-).';
 		}
 		$bibres= implode(' ',$bibinfo);
+		$_SESSION['bibres']=$bibres;
+		if(isset($_POST['add'])){
+			$_SESSION['bibres'] .= '<br/>'.$bibres;
+		}
 		if(isset($_POST['make'])){
-			echo "<div class='res'><textarea id='contents' name='contents' class='bibres'>$bibres</textarea>";
+		echo "<div class='res'><textarea id='contents' name='contents' class='bibres'>{$_SESSION['bibres']}</textarea>";
 			echo "<button type='submit' class='copybtn' onClick='copy();'>Copy</button></div>";
 		}
 	?>

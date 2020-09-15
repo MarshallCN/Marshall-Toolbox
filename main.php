@@ -26,6 +26,7 @@
 		$wiki= 'https://en.wikipedia.org/w/index.php?search='.$text;
 		$bbc= 'http://www.bbc.co.uk/search?q='.$text;
 		$staf= 'https://staffs.summon.serialssolutions.com/#!/search?ho=t&l=en-UK&q='.$text;
+		$staflib = 'http://libcat.staffs.ac.uk/cgi-bin/koha/opac-search.pl?idx=&q='.$text;
 		$smr= 'http://www.studymode.com/search_results.php?query='.$text;
 		$google= 'https://www.google.com.sg/search?q='.$text;
 		$baidutrs= 'http://fanyi.baidu.com/?#en/zh/'.$text;
@@ -66,11 +67,16 @@
 			<img src='img/staf.png' class='logo'><samp class='big'>Search <?php echo $text1;?> on Staffordshire</samp></a>
 		</td>
 	</tr>
+	<tr>
+		<td><a id='link8' href="<?php echo $staflib;?>" target='_blank'>
+			<img src='img/staf.png' class='logo'><samp class='big'>Search <?php echo $text1;?> on Staffordshire Lib</samp></a>
+		</td>
+	</tr>
 </table></column></row centered>
 </div>
 <?php
 $scp="";
-for($i=1;$i<8;$i++){
+for($i=1;$i<9;$i++){
 	$scp=$scp."document.getElementById('link$i').click();";
 }
 if (isset($_POST['all'])){
